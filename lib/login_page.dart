@@ -22,6 +22,8 @@ class _LoginPageState extends State<LoginPage> {
     webService.login(loginRequestModel);
   }
 
+  String text = "";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,17 +65,15 @@ class _LoginPageState extends State<LoginPage> {
                 height: 50,
                 child: ElevatedButton(
                     onPressed: () {
-                      if (_userNameTexteditingController.text.isNotEmpty &&
-                          _passwordTexteditingController.text.isNotEmpty) {
-                        final model = UserModelRequest(
-                            id: int.tryParse(idController.text),
-                            name: nameController.text,
-                            surname: surnameController.text,
-                            title: titleController.text,
-                            color: colorController.text,
-                            age: int.tryParse(ageController.text));
-                        sendItemToLocalHost(model);
-                      }
+                      // if (_userNameTexteditingController.text.isNotEmpty &&
+                      //     _passwordTexteditingController.text.isNotEmpty) {
+                      //   final loginRequestModel = LoginRequestModel(
+                      //     userName: _userNameTexteditingController.text,
+                      //     password: _passwordTexteditingController.text,
+                      //   );
+
+                      //   sendItemsToWebservice(loginRequestModel);
+                      // }
                     },
                     child: const Text("Sign in")))
           ],
